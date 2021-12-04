@@ -1,7 +1,7 @@
 import json
 
 try:
-    with open('data.json') as file:
+    with open('data/data.json') as file:
         tables = json.load(file)
 except FileNotFoundError as err:
     # app.logger.error(f'ERROR: {err}')
