@@ -8,7 +8,7 @@ app.register_blueprint(carts_bp, url_prefix='/carts')
 
 
 @app.route('/')
-def get():
+def index():
     return 'main', 200
 
 # app.logger.debug('This is a DEBUG message')

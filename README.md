@@ -45,4 +45,10 @@ PS C:\Users\username> Set-ExecutionPolicy Unrestricted
 
 8. [**A Comprehensive Guide on Market Basket Analysis** _(analyticsvidhya.com)_](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-market-basket-analysis/)
 
-9. [**Association Rule Learning-Apriori (Store DataSet)** _(kaggle.com)_](https://www.kaggle.com/sivaram1987/association-rule-learningapriori)
+9. [**Association Rule Learning-Apriori (Downloaded Store DataSet)** _(kaggle.com)_](https://www.kaggle.com/sivaram1987/association-rule-learningapriori)
+
+10. [**Market-basket analysis and prediction (Downloaded Transaction DataSet)**](https://towardsdatascience.com/market-basket-analysis-using-associative-data-mining-and-apriori-algorithm-bddd07c6a71a)
+
+11. [**End-to-End Introduction to Market Basket Analysis in R**](https://www.analyticsvidhya.com/blog/2021/10/end-to-end-introduction-to-market-basket-analysis-in-r/)
+
+12. [**Introduction to Market Basket Analysis in Python**](https://pbpython.com/market-basket-analysis.html)
