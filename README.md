@@ -41,14 +41,18 @@ PS C:\Users\username> Set-ExecutionPolicy Unrestricted
 
 6. [**Explanation of the Market Basket Model** _(informationbuilders.com)_](https://webfocusinfocenter.informationbuilders.com/wfappent/TLs/TL_rstat/source/marketbasket49.htm)
 
-7. [**Kaggle Search: basket analysis** _(kaggle.com)_](https://www.kaggle.com/search?q=basket+analysis)
+7. [**Market Basket Analysis** _(kaggle.com)_](https://www.kaggle.com/roshansharma/market-basket-analysis/notebook)
 
-8. [**A Comprehensive Guide on Market Basket Analysis** _(analyticsvidhya.com)_](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-market-basket-analysis/)
+8. [**Customer Segmentation and Market Basket Analysis** _(kaggle.com)_](https://www.kaggle.com/mgmarques/customer-segmentation-and-market-basket-analysis)
 
-9. [**Association Rule Learning-Apriori (Downloaded Store DataSet)** _(kaggle.com)_](https://www.kaggle.com/sivaram1987/association-rule-learningapriori)
+9. [**Kaggle Search: basket analysis** _(kaggle.com)_](https://www.kaggle.com/search?q=basket+analysis)
 
-10. [**Market-basket analysis and prediction (Downloaded Transaction DataSet)**](https://towardsdatascience.com/market-basket-analysis-using-associative-data-mining-and-apriori-algorithm-bddd07c6a71a)
+10. [**A Comprehensive Guide on Market Basket Analysis** _(analyticsvidhya.com)_](https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-market-basket-analysis/)
 
-11. [**End-to-End Introduction to Market Basket Analysis in R**](https://www.analyticsvidhya.com/blog/2021/10/end-to-end-introduction-to-market-basket-analysis-in-r/)
+11. [**Association Rule Learning-Apriori (Downloaded Store DataSet)** _(kaggle.com)_](https://www.kaggle.com/sivaram1987/association-rule-learningapriori)
 
-12. [**Introduction to Market Basket Analysis in Python**](https://pbpython.com/market-basket-analysis.html)
+12. [**Market-basket analysis and prediction (Downloaded Transaction DataSet)** _(towardsdatascience.com)_](https://towardsdatascience.com/market-basket-analysis-using-associative-data-mining-and-apriori-algorithm-bddd07c6a71a)
+
+13. [**End-to-End Introduction to Market Basket Analysis in R** _(analyticsvidhya.com)_](https://www.analyticsvidhya.com/blog/2021/10/end-to-end-introduction-to-market-basket-analysis-in-r/)
+
+14. [**Introduction to Market Basket Analysis in Python** _(pbpython.com)_](https://pbpython.com/market-basket-analysis.html)
