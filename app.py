@@ -1,21 +1,18 @@
 from flask import Flask
-from blueprints.carts_blueprint import carts_bp
+from flask_cors import CORS
+from routes.main_blueprint import main_bp
+from routes.transactions_blueprint import transactions_bp
+from routes.analyse_blueprint import analyse_bp
 import os
 
 
 app = Flask(__name__)
-app.register_blueprint(carts_bp, url_prefix='/carts')
+app.register_blueprint(main_bp, url_prefix='/')
+app.register_blueprint(transactions_bp, url_prefix='/transactions')
+app.register_blueprint(analyse_bp, url_prefix='/analyse')
 
-
-@app.route('/')
-def index():
-    return 'main', 200
-
-# app.logger.debug('This is a DEBUG message')
-# app.logger.info('This is an INFO message')
-# app.logger.warning('This is a WARNING message')
-# app.logger.error('This is an ERROR message')
-
+# enable CORS
+CORS(app)
 
 if __name__ == "__main__":
     os.environ['FLASK_ENV'] = 'development'
