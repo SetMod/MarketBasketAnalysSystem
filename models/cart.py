@@ -1,22 +1,18 @@
 import json
 
-try:
-    with open('data/data.json') as file:
-        tables = json.load(file)
-except FileNotFoundError as err:
-    # app.logger.error(f'ERROR: {err}')
-    # print(f'ERROR: {err}')
-    tables = None
 
+class CartModel():
 
-class DbContext():
-
-    def __init__(self) -> None:
-        pass
+    def __init__(self):
+        try:
+            with open('data/data.json') as file:
+                self.tables = json.load(file)
+        except FileNotFoundError as err:
+            self.tables = None
 
     def get_table(self, table_name: str, model, func):
-        if tables:
-            for table in tables:
+        if self.tables:
+            for table in self.tables:
                 if table.get('table') == table_name:
                     return func(table, model)
             return None

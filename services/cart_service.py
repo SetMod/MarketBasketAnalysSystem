@@ -1,14 +1,14 @@
 from .generic_service import GenericService
-from context.db_context import DbContext
+from models.cart import CartModel
 
 
 class CartService(GenericService):
 
-    def __init__(self, context: DbContext, table='Carts'):
-        super().__init__(context, table)
+    def __init__(self, model: CartModel, table='Carts'):
+        super().__init__(model, table)
 
     def get_by_name_value(self, name: str, value):
-        data = self.context.get_all_data(self.table)
+        data = self.model.get_all_data(self.table)
         try:
             model = list(
                 filter(lambda entity: str(entity['data'][name]) == value, data))

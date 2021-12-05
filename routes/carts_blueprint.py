@@ -1,12 +1,11 @@
 from flask import Blueprint, jsonify, request
-from context.db_context import DbContext
+from models.cart import CartModel
 from services.cart_service import CartService
-from models.cart_model import CartModel
 
 
 carts_bp = Blueprint('carts', __name__)
-context = DbContext()
-cart_service = CartService(context)
+model = CartModel()
+cart_service = CartService(model)
 
 
 # GET /carts/
@@ -44,8 +43,7 @@ def get_cart_by_name(key: str, value):
 def add_cart():
     data = request.get_json(False)
     try:
-        new_cart = CartModel(data['id'], data['data'])
-        cart = cart_service.create(new_cart)
+        cart = cart_service.create((data['id'], data['data']))
         if cart:
             return jsonify(cart), 201
         else:
@@ -60,8 +58,7 @@ def add_cart():
 def update_cart_by_id(id: int):
     data = request.get_json(False)
     try:
-        updated_cart = CartModel(id, data)
-        cart = cart_service.update(updated_cart)
+        cart = cart_service.update((data['id'], data['data']))
         if cart:
             return jsonify(cart), 201
         else:
