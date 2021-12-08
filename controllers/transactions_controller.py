@@ -38,8 +38,9 @@ def create_transactions_by_month_image(image_name: str, create: str):
 
 def get_transactions_by_month_image(image_name: str):
     try:
-        if not path.isfile(f'images/{image_name}'):
-            image_name = 'images/no_image.png'
+        if not path.exists(f'images/{image_name}'):
+            print('Hello')
+            image_name = 'no_image.png'
         return f'images/{image_name}'
     except FileNotFoundError as err:
         print(err)
