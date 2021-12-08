@@ -56,3 +56,7 @@ PS C:\Users\username> Set-ExecutionPolicy Unrestricted
 13. [**End-to-End Introduction to Market Basket Analysis in R** _(analyticsvidhya.com)_](https://www.analyticsvidhya.com/blog/2021/10/end-to-end-introduction-to-market-basket-analysis-in-r/)
 
 14. [**Introduction to Market Basket Analysis in Python** _(pbpython.com)_](https://pbpython.com/market-basket-analysis.html)
+
+15. [**Market Basket Analysis using R** _datacamp.com_](https://www.datacamp.com/community/tutorials/market-basket-analysis-r)
+
+16. [**Implementing Apriori algorithm in Python** _geeksforgeeks.org_](https://www.geeksforgeeks.org/implementing-apriori-algorithm-in-python/)
