@@ -1,6 +1,33 @@
 <template>
-  <div class="nav navbar-expand-sm navbar-light nav-tabs mt-1">
+  <div class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
+      <a href="/" class="navbar-brand">MBAS</a>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/transactions"
+              >Transactions</router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/about">About</router-link>
+          </li>
+        </ul>
+        <form>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -12,16 +39,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="collapse navbar-collapse justify-content-center"
-        id="navbarSupportedContent"
-      >
-        <router-link class="nav-item nav-link" to="/">Home</router-link>
-        <router-link class="nav-item nav-link" to="/transactions"
-          >Transactions</router-link
-        >
-        <router-link class="nav-item nav-link" to="/about">About</router-link>
-      </div>
     </div>
   </div>
   <router-view class="container" />
