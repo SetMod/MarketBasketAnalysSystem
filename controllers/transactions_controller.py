@@ -5,8 +5,8 @@ from models.transaction import Transaction
 def get_transactions():
     transactions = Transaction.get_transactions()
     try:
-        if not transactions.empty:
-            return transactions.to_dict()
+        if transactions:
+            return transactions
         else:
             return 'No transactions'
     except AttributeError as err:
@@ -17,8 +17,8 @@ def get_transactions():
 def get_transaction_by_id(id: int):
     transactions = Transaction.get_transaction_by_id(id)
     try:
-        if not transactions.empty:
-            return transactions.to_dict()
+        if transactions:
+            return transactions
         else:
             return f'No transaction with id={id}'
     except AttributeError as err:

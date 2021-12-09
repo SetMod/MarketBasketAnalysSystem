@@ -5,11 +5,9 @@ from mlxtend.frequent_patterns import association_rules
 import matplotlib.pyplot as plt
 from matplotlib import style
 import numpy as np
-from werkzeug.exceptions import ExpectationFailed
 
 
 class Transaction:
-    file_path = 'data/transaction_data.csv'
 
     def __init__(self) -> None:
         pass
@@ -17,8 +15,8 @@ class Transaction:
     @staticmethod
     def get_transactions():
         try:
-            read_df = pd.read_csv(filepath=Transaction.file_path)
-            return read_df.copy()[:100]
+            read_df = pd.read_csv('data/transaction_data.csv')
+            return read_df.copy()[:100].values.tolist()
         except Exception as err:
             print(err)
             return None
