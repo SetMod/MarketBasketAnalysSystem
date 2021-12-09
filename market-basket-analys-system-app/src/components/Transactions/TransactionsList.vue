@@ -1,16 +1,16 @@
 <template>
   <div class="text-center">
-    <TransactonsTable v-if="isLoaded" :transactions="transactions" />
-    <TransactonsRetryButton v-else-if="!isLoaded && errorMsg" />
+    <TransactionsTable v-if="isLoaded" :transactions="transactions" />
+    <TransactionsRetryButton v-else-if="!isLoaded && errorMsg" />
     <TransactionsLoading v-else />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import store from "../store/index";
-import TransactonsTable from "./TransactionTable.vue";
-import TransactonsRetryButton from "./TransactionsRetryButton.vue";
+import store from "../../store/index";
+import TransactionsTable from "./TransactionTable.vue";
+import TransactionsRetryButton from "./TransactionsRetryButton.vue";
 import TransactionsLoading from "./TransactionsLoading.vue";
 
 export default {
@@ -25,8 +25,8 @@ export default {
     },
   },
   components: {
-    TransactonsTable,
-    TransactonsRetryButton,
+    TransactionsTable,
+    TransactionsRetryButton,
     TransactionsLoading,
   },
   mounted() {

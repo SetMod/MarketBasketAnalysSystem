@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import TransactionsList from "../components/TransactionsList.vue";
-import TransactionsForm from "../components/TransactionsForm.vue";
-import TransactionImage from "../components/TransactionImage.vue";
+import TransactionsList from "../components/Transactions/TransactionsList.vue";
+import TransactionsForm from "../components/Transactions/TransactionsForm.vue";
+import TransactionImage from "../components/Transactions/TransactionImage.vue";
 
 export default {
   name: "Transactions",

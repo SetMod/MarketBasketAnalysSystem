@@ -2,7 +2,6 @@
   <div class="mb-3">
     <label for="support1" class="form-label">{{ inputName }}</label>
 
-    <!-- v-model="confidence" -->
     <input
       min="min"
       max="max"
