@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div>
     <TransactionsTable v-if="isLoaded" :transactions="transactions" />
     <TransactionsRetryButton v-else-if="!isLoaded && errorMsg" />
     <TransactionsLoading v-else />
@@ -9,7 +9,7 @@
 <script>
 import { mapState } from "vuex";
 import store from "../../store/index";
-import TransactionsTable from "./TransactionTable.vue";
+import TransactionsTable from "./TransactionsTable.vue";
 import TransactionsRetryButton from "./TransactionsRetryButton.vue";
 import TransactionsLoading from "./TransactionsLoading.vue";
 

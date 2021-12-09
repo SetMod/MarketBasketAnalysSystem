@@ -1,5 +1,5 @@
 <template>
-  <div class="transactions mt-3">
+  <div class="mt-3">
     <div class="container row">
       <TransactionsForm class="col-lg-6" />
       <TransactionImage class="col-lg-6" />
@@ -24,7 +24,4 @@ export default {
 </script>
 
 <style>
-.transactions {
-  font-size: 20px;
-}
 </style>

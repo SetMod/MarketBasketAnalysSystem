@@ -1,5 +1,5 @@
 <template>
-  <div class="loading mb-5">
+  <div class="loading my-5">
     <div class="spinner-grow" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
