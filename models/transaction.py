@@ -12,11 +12,41 @@ class Transaction:
     def __init__(self) -> None:
         pass
 
-    @staticmethod
-    def get_transactions():
+    def get_transactions_df():
         try:
             read_df = pd.read_csv('data/transaction_data.csv')
-            return read_df.copy()[:100].values.tolist()
+            return read_df.copy()
+        except Exception as err:
+            print(err)
+            return None
+
+    @staticmethod
+    def get_transactions_list():
+        try:
+            df = Transaction.get_transactions_df()
+            return df[:100].values.tolist()
+        except Exception as err:
+            print(err)
+            return None
+
+    @staticmethod
+    def get_paginated_transactions(pageSize: int, pageNumber: int):
+        try:
+            df = Transaction.get_transactions_list()
+            if pageNumber <= 1:
+                print(pageSize)
+                print(pageNumber)
+                return df[0:pageSize]
+            elif pageSize * pageNumber > len(df):
+                return df[len(df)-pageSize:len(df)]
+            else:
+                start = pageSize * pageNumber - pageSize
+                end = pageSize * pageNumber
+                print(pageSize)
+                print(pageNumber)
+                print(f"start {start}")
+                print(f"end {end}")
+                return df[start:end]
         except Exception as err:
             print(err)
             return None
@@ -98,7 +128,7 @@ class Transaction:
             return None
 
     @staticmethod
-    def create_top_coast_transactions_image(image_name: str):
+    def create_top_cost_transactions_image(image_name: str):
         try:
             df = Transaction.get_transactions()
             df['total_cost_item'] = df.NumberOfItemsPurchased*df.CostPerItem

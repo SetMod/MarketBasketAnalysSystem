@@ -1,6 +1,9 @@
 # archives
 *.zip
 
+# VSCode
+.vscode
+
 # data
 data/*
 !data/*.md

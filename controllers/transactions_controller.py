@@ -2,9 +2,24 @@ from os import path
 from models.transaction import Transaction
 
 
-def get_transactions():
-    transactions = Transaction.get_transactions()
+def get_transactions_list():
+    transactions = Transaction.get_transactions_list()
     try:
+        if transactions:
+            return transactions
+        else:
+            return 'No transactions'
+    except AttributeError as err:
+        print(err)
+        return 'Error reading file'
+
+
+def get_paginated_transactions(pageSize: int, pageNumber: int):
+    try:
+        pageSize = int(pageSize) if pageSize else 10
+        pageNumber = int(pageNumber) if pageNumber else 1
+        transactions = Transaction.get_paginated_transactions(
+            pageSize, pageNumber)
         if transactions:
             return transactions
         else:

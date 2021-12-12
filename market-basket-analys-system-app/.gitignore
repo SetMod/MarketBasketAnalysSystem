@@ -2,6 +2,8 @@
 node_modules
 /dist
 
+#jsconfig
+jsconfig.json
 
 # local env files
 .env.local

@@ -3,7 +3,16 @@
 @port = 3000
 @host = {{protocol}}://{{hostname}}:{{port}}
 
+###
 
+GET {{host}}/transactions
+
+###
+
+GET {{host}}/transactions/pagination?pageSize=5&pageNumber=2
+###
+
+GET {{host}}/transactions/pagination?pageSize=5&pageNumber=1
 ###
 
 GET {{host}}/carts/ HTTP/1.1

@@ -1,12 +1,22 @@
-from flask import Blueprint, jsonify, send_file
+from flask import Blueprint, jsonify, send_file, request
 import json
 from controllers import transactions_controller
 transactions_bp = Blueprint('transactions', __name__)
 
 
 @transactions_bp.get('/')
-def get_transactions():
-    transactions = transactions_controller.get_transactions()
+def get_transactions_list():
+    transactions = transactions_controller.get_transactions_list()
+    return jsonify(transactions)
+
+
+# @transactions_bp.get('/pagination?pageSize=<int:pageSize>&pageNumber=<int:pageNumber>')
+@transactions_bp.get('/pagination')
+def get_paginated_transactions():
+    pageSize = request.args.get('pageSize')
+    pageNumber = request.args.get('pageNumber')
+    transactions = transactions_controller.get_paginated_transactions(
+        pageSize, pageNumber)
     return jsonify(transactions)
 
 
@@ -27,4 +37,4 @@ def get_transaction_by_id(id: int):
 def get_transactions_by_month_image(image_name: str):
     transaction = transactions_controller.get_transactions_by_month_image(
         image_name)
-    return send_file(transaction, mimetype='image/png')
+    return send_file(transaction, mimetype='image/png'), 200
