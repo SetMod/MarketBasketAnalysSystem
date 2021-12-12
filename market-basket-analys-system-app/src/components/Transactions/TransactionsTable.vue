@@ -1,17 +1,17 @@
 <template>
-  <h2 class="py-3 mt-3">Transactions</h2>
   <div class="table-responsive overflow-scroll">
     <table class="table table-striped table-hover table-sm table">
       <thead>
         <tr>
-          <th scope="col">CostPerItem</th>
-          <th scope="col">Country</th>
-          <th scope="col">ItemCode</th>
-          <th scope="col">ItemDescription</th>
-          <th scope="col">NumberOfItemsPurchased</th>
-          <th scope="col">TransactionId</th>
-          <th scope="col">TransactionTime</th>
-          <th scope="col">UserId</th>
+          <th
+            scope="col"
+            class="clickable"
+            v-for="(header, key) in headers"
+            :key="key"
+            @click="getHeader"
+          >
+            {{ header }}
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -24,16 +24,54 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapState } from "vuex";
+import store from "../../store/index";
 export default {
   name: "TransactionsTable",
+  data() {
+    return {
+      headers: [
+        "CostPerItem",
+        "Country",
+        "ItemCode",
+        "ItemDescription",
+        "NumberOfItemsPurchased",
+        "TransactionId",
+        "TransactionTime",
+        "UserId",
+      ],
+    };
+  },
+  store: store,
   props: {
     transactions: {
       type: Array,
       required: true,
     },
   },
+  computed: {
+    ...mapState({
+      sortIndex: (state) => state.transactions.sortIndex,
+    }),
+    ...mapGetters({
+      sortedTransactions: "transactions/getSortedTransactions",
+    }),
+  },
+  methods: {
+    ...mapMutations({
+      setSortIndex: "transactions/setSortIndex",
+      setTransactions: "transactions/setTransactions",
+    }),
+    getHeader(e) {
+      this.setSortIndex({ index: e.target.cellIndex });
+      this.setTransactions({ data: this.sortedTransactions });
+    },
+  },
 };
 </script>
 
 <style>
+.clickable {
+  cursor: pointer;
+}
 </style>
