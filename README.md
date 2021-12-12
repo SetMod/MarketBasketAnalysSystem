@@ -60,3 +60,5 @@ PS C:\Users\username> Set-ExecutionPolicy Unrestricted
 15. [**Market Basket Analysis using R** _datacamp.com_](https://www.datacamp.com/community/tutorials/market-basket-analysis-r)
 
 16. [**Implementing Apriori algorithm in Python** _geeksforgeeks.org_](https://www.geeksforgeeks.org/implementing-apriori-algorithm-in-python/)
+
+17. [**Data preprocessing with Python Pandas** _towardsdatascience.com_](https://towardsdatascience.com/data-preprocessing-with-python-pandas-part-1-missing-data-45e76b781993)
