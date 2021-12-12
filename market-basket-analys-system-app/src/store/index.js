@@ -1,30 +1,22 @@
 import { createStore } from 'vuex'
-import TransactionsService from '../services/TransactionsService'
-// import axios from 'axios';
+import TransactionsModule from './TrsansactionsModule'
+
 
 export default createStore({
   state: {
-    transactions: [],
-    isLoaded: false,
-    errorMsg: "",
     backend_url: "http://127.0.0.1:3000",
   },
-  mutations: {
-    setTransactions(state, payload) {
-      state.transactions = payload.data
+  getters: {
+    getTransactionsUrl(state){
+      return `${state.backend_url}/transactions/pagination?pageSize=${state.transactions.pageSize}&pageNumber=${state.transactions.pageNumber}`
     },
-    setLoaded(state, payload) {
-      state.isLoaded = payload.data
-    },
-    setError(state, payload) {
-      state.errorMsg = payload.data
-    },
+    getTransactionImageUrl(state){
+      return `${state.backend_url}/transactions/images/transactions_by_month.png`
+    }
   },
-  actions: {
-    getTransactions(context, payload) {
-      TransactionsService.getTransactions(context,payload)
-    },
+  mutations: {
   },
   modules: {
+    transactions: TransactionsModule
   }
 })
