@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
-import TransactionsModule from './TrsansactionsModule'
+import TransactionsModule from './TransactionsModule'
+import AnalyseModule from './AnalyseModule'
 
 
 export default createStore({
@@ -12,11 +13,15 @@ export default createStore({
     },
     getTransactionImageUrl(state){
       return `${state.backend_url}/transactions/images/transactions_by_month.png`
+    },
+    getRulesUrl(state){
+      return `${state.backend_url}/transactions/analyse`
     }
   },
   mutations: {
   },
   modules: {
-    transactions: TransactionsModule
+    transactions: TransactionsModule,
+    analyse: AnalyseModule
   }
 })
