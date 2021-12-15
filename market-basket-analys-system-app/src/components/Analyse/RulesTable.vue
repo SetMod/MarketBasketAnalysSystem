@@ -16,7 +16,9 @@
       </thead>
       <tbody>
         <tr v-for="(rule, key1) in rules" :key="key1">
-          <td v-for="(val, key2) in rule" :key="key2">{{ val }}</td>
+          <td v-for="(val, key2) in rule" :key="key2">
+            {{ typeof val === "number" ? val.toFixed(4) : val[0] }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -24,6 +26,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "RulesTable",
   props: {
@@ -35,16 +38,20 @@ export default {
   data() {
     return {
       headers: [
-        "CostPerItem",
-        "Country",
-        "ItemCode",
-        "ItemDescription",
-        "NumberOfItemsPurchased",
-        "TransactionId",
-        "TransactionTime",
-        "UserId",
+        "Antecedents",
+        "Consequents",
+        "Antecedent support",
+        "Consequent support",
+        "Support",
+        "Confidence",
+        "Lift",
+        "Leverage",
+        "Conviction",
       ],
     };
+  },
+  methods: {
+    ...mapActions({}),
   },
 };
 </script>
