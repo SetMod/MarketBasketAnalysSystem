@@ -3,8 +3,8 @@ from models.transaction import Transaction
 
 
 def get_transactions_list():
-    transactions = Transaction.get_transactions_list()
     try:
+        transactions = Transaction.get_transactions_list()
         if transactions:
             return transactions
         else:
@@ -30,8 +30,8 @@ def get_paginated_transactions(pageSize: int, pageNumber: int):
 
 
 def get_transaction_by_id(id: int):
-    transactions = Transaction.get_transaction_by_id(id)
     try:
+        transactions = Transaction.get_transaction_by_id(id)
         if transactions:
             return transactions
         else:
@@ -60,3 +60,17 @@ def get_transactions_by_month_image(image_name: str):
     except FileNotFoundError as err:
         print(err)
         return 'images/no_image.png'
+
+
+def get_association_rules(min_support: None = 0.015, min_threshold: None = 0.015):
+    try:
+        min_support = float(min_support) if min_support else 0.015
+        min_threshold = float(min_threshold) if min_threshold else 0.015
+        rules = Transaction.get_association_rules(min_support, min_threshold)
+        # if not rules.empty:
+        return rules
+        # else:
+        # return 'There is no rules'
+    except Exception as err:
+        print(err)
+        return 'Some error has ocurred'

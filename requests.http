@@ -5,6 +5,10 @@
 
 ###
 
+GET {{host}}/transactions/analyse?min_support=0.001&min_threshold=0.01
+
+###
+
 GET {{host}}/transactions
 
 ###
