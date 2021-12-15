@@ -1,15 +1,14 @@
 <template>
   <div class="mb-3">
     <label for="support1" class="form-label">{{ inputName }}</label>
-
     <input
-      min="min"
-      max="max"
-      type="number"
+      :min="min"
+      :max="max"
+      :type="inputType"
+      :value="value"
       class="form-control"
       aria-describedby="inputName + 'threshold'"
     />
-
     <div id="inputName + 'Help1'" class="form-text" v-if="!helpText">
       Please specify {{ inputName }} between {{ min }} and {{ max }}.
     </div>
@@ -21,11 +20,18 @@
 
 <script>
 export default {
-  name: "TransactionInput",
+  name: "AnalyseInput",
   props: {
     inputName: {
       type: String,
       required: true,
+    },
+    value: {
+      required: true,
+    },
+    inputType: {
+      type: String,
+      default: "text",
     },
     min: {
       type: Number,
