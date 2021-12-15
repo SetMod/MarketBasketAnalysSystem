@@ -1,13 +1,16 @@
 <template>
   <div class="mt-3 text-center mt-5">
     <h2 class="py-3 mt-3">Transactions</h2>
-    <div v-if="isLoaded">
+    <div v-show="isLoaded">
       <TransactionPagination />
       <TransactionsTable :transactions="transactions" />
       <BackToTopButton />
     </div>
-    <TransactionsRetryButton v-else-if="!isLoaded && errorMsg" />
-    <TransactionsLoading v-else />
+    <TransactionsRetryButton v-show="!isLoaded && errorMsg" />
+    <LoadingCircle v-show="!isLoaded && !errorMsg" />
+    <div class="alert alert-danger" role="alert" v-show="errMsg">
+      {{ errMsg }}
+    </div>
   </div>
 </template>
 
@@ -16,7 +19,7 @@ import { mapState, mapGetters, mapActions } from "vuex";
 import store from "../store/index";
 import TransactionsTable from "../components/Transactions/TransactionsTable.vue";
 import TransactionsRetryButton from "../components/Transactions/TransactionsRetryButton.vue";
-import TransactionsLoading from "../components/Transactions/TransactionsLoading.vue";
+import LoadingCircle from "../components/LoadingCircle.vue";
 import BackToTopButton from "../components/BackToTopButton.vue";
 import TransactionPagination from "../components/Transactions/TransactionPagination.vue";
 
@@ -25,7 +28,7 @@ export default {
   components: {
     TransactionsTable,
     TransactionsRetryButton,
-    TransactionsLoading,
+    LoadingCircle,
     BackToTopButton,
     TransactionPagination,
   },
@@ -46,7 +49,7 @@ export default {
     }),
   },
   mounted() {
-    if (store.state.transactions.transactions.length == 0) {
+    if (this.transactions.length === 0) {
       this.getTransactions();
     }
   },
